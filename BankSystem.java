@@ -10,8 +10,8 @@ public class BankSystem {
       Scanner scan = new Scanner(System.in) ;
 
       do {
-        System.out.println("\n==== Welcome to the MelTrust Bank! ====\n");
-        System.out.println("\nB - Check for Balance"); 
+        System.out.println("\n\n==== Welcome to the MelTrust Bank! ====\n");
+        System.out.println("B - Check for Balance"); 
         System.out.println("D - Make Deposit");
         System.out.println("W - Make Witdrawal");
         System.out.println("Q - Quit");
@@ -37,21 +37,32 @@ public class BankSystem {
 
         switch (choice) {
           case 'B':
-            System.out.println("\nChecking Balance..."); 
+            System.out.println("Checking Balance...");
+            System.out.println("Your current balance is " + bal);
             break;
+
           case 'D':
             System.out.println("\n==== Deposit ===="); 
+            System.out.println("Your current balance is " + bal);
+            System.out.print("Enter amount to Deposit : ");
             break;
+
           case 'W':
             System.out.println("\n==== Withdraw ===="); 
+            System.out.println("Your current balance is " + bal);
+            System.out.print("Enter amount to Witdraw: ");
+
             break;
+
           case 'Q': System.out.println("\n==== Exiting Program... ===="); 
             break;
+
           default:
             System.out.println("\n==== Invalid entry, enter any valid option: B/D/W/Q ====");
             break;
+
         }
-      } while (continueTrans && runningTrans);
+      } while (runningTrans);
 
       System.out.println("Want to transact another? (Y/N)");
       scan.close();
